@@ -34,6 +34,6 @@ class SpellChecker:
         suggestions.sort(key=lambda x: x[1])
         return [word for word, distance in suggestions[:5]]
 
-word_list = words.words()
+word_list = (word.lower() for word in words.words())
 spell_checker = SpellChecker(word_list)
 # print(spell_checker.suggest("spwlling"))
